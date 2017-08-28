@@ -22,5 +22,7 @@ platforms:
       elevated: true
 
 suites:
-  - name: default
+  - name: uk
     run_list:
+      - recipe[windows_server_localisation::uk]
+
