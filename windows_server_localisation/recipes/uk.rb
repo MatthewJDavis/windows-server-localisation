@@ -8,7 +8,7 @@
 reboot 'restart_computer' do
   action :nothing
   reason 'Change of locale'
-  delay_mins 2
+  delay_mins 1
 end
 
 # Install DSC Package Management Provider Resource
@@ -43,7 +43,6 @@ dsc_resource 'Install_SystemLocaleDSC' do
   property :InstallationPolicy, 'Trusted'
   property :RequiredVersion, '1.1.0.0'
 end
-
 
 # Set timezone to GMT
 dsc_resource 'Set_TimeZone_GMT' do
