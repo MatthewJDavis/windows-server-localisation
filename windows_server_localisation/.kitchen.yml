@@ -10,17 +10,17 @@ provisioner:
   always_update_cookbooks: true
 
 verifier:
-  name: inspec
+  name: pester
 
 platforms:
-  - name: ubuntu-16.04
-  - name: centos-7.3
+  - name: windows-server-2016
+    driver:
+      box: mwrock/Windows2016
+    os_type: windows
+    transport:
+      name: winrm
+      elevated: true
 
 suites:
   - name: default
     run_list:
-      - recipe[windows_server_localisation::default]
-    verifier:
-      inspec_tests:
-        - test/smoke/default
-    attributes:
