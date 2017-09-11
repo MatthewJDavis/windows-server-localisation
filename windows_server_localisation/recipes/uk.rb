@@ -11,6 +11,7 @@ reboot 'restart_computer' do
   delay_mins 1
 end
 
+# Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force required for AWS
 # Install DSC Package Management Provider Resource
 powershell_script 'Install_PackageManagementProviderResource' do
   code <<-EOH
